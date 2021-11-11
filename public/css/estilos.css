@@ -12,7 +12,10 @@ body {
 
 /* CONTENEDOR PRINCIPAL */
 .contenedor {
-    width: 60%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     margin-top: 15px;
     box-shadow: 2px 2px 10px #262228;
@@ -24,33 +27,164 @@ body {
 .cabecera {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
     background-color: #007849;
     border: 1px solid #262228;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.tabla {
-    border: 2px solid white;
-    
-}
-
-.tabla td {
-    padding: 10px;
-}
-
-.tabla i {
+.cabecera i {
     font-size: 2.5rem;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
-.tabla a {
-    text-decoration: none;
+.articulo1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
 }
 
-.articulo {
+.articulo1 h3 {
+    margin: 20px 0;
     color: white;
+    align-self: flex-start;
+    margin-left: 15%;
+}
+
+.formulario {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.campo {
+    width: 70%;
+    padding: .6rem;
+    border-radius: 40px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: white;
+}
+
+.boton_insertar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .6rem;
+    border-radius: 5px;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    -webkit-appearance: button;
+    -moz: none;
+    -ms: none;
+    background-color: #007849;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.boton_insertar:hover {
+    transition: .1s;
+    transform: scale(.95);
+}
+
+.boton_insertar i {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.articulo2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.articulo2 h3 {
+    margin: 20px 0;
+    color: white;
+    align-self: flex-start;
+    margin-left: 15%;
+}
+
+.articulo2 table {
+    width: 70%;
+    margin: 0 auto;
+    min-height: 50px;
+}
+
+.articulo2 table tr {
+    height: 20px;
+}
+
+.articulo2 table tr td {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #007849;
+    font-style: italic;
+    text-align: left;
+    padding: 5px 0;
+}
+
+.articulo2 table tr td i {
+    font-size: 1rem;
+    margin-left: 5px;
+}
+
+.boton_eliminar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .6rem;
+    border-radius: 5px;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    -webkit-appearance: button;
+    -moz: none;
+    -ms: none;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.boton_eliminar:hover {
+    transition: .1s;
+    transform: scale(.95);
+}
+
+/* PIE */
+.pie {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: .9rem;
+    font-weight: bold;
+    background-color: #007849;
+    border: 1px solid black;
 }

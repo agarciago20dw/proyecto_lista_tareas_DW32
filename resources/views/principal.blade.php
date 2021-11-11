@@ -12,14 +12,17 @@
     <div class="contenedor">
         <header class="cabecera">
             <h1>Lista de tareas</h1>
-            <i class="fas fa-tasks"></i>
+            <i class="fas fa-bars"></i>
         </header>
-        <article class="articulo">
+        <article class="articulo1">
             @yield('articulo1')
         </article>
-        <article class="articulo">
+        <article class="articulo2">
             @yield('articulo2')
         </article>
+        <footer class="pie">
+            <p>Adrián García González © DW32 Zubiri Manteo</p>
+        </footer>
     </div>
 </body>
 </html>

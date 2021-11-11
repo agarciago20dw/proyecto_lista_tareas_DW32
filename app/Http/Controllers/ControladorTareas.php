@@ -15,7 +15,8 @@ class ControladorTareas extends Controller
     public function insertar(Request $request) {
         // CÓDIGO INSERTAR TAREAS
         $tarea = new Tarea;
-        $tarea->fill(['nombre' => $request->get('nombre')]);
+        $tarea->nombre = $request->get('nombre');
+        $tarea->save();
         
         return redirect('/');
     }

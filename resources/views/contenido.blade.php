@@ -1,25 +1,40 @@
 @extends('principal')
 
 @section('articulo1')
-    
-        <form method="POST" action="{{ config('app.url')}}/tarea">
+
+        <h3>Nueva Tarea</h3>
+        <form class="formulario" method="POST" action="{{ route('tareas.insertar') }}">
             @csrf 
-            <input type="text" name="insertar" id="insertar">
-            <input type="submit" value="Añadir tarea">
-            <i class="fas fa-plus"></i>
+            <input type="text" name="nombre" class="campo" placeholder="Introduce el nombre de la tarea...">
+            <button class="boton_insertar" type="submit">
+                <i class="far fa-plus-square"></i>
+                <p>Añadir Tarea</p>
+            </button>      
         </form>
 
 @endsection
 
 @section('articulo2')
     
-    <table class="tabla">
+    <h3>Tareas Actuales</h3>
+    <table>
         @foreach ($tareas as $tarea)
             <tr>
-                <td><a href="{{ config('app.url')}}/tarea/" . $tarea->id</a>><i class="far fa-trash-alt"></i>{{ $tarea->nombre }}</a></td>
+                <td>
+                    {{ $tarea->nombre }}
+
+                    <form action="{{ route('tareas.eliminar', [$tarea->id]) }}" method="POST">
+                        @csrf
+                        @method('delete')
+
+                        <button class="boton_eliminar">
+                            <p>Eliminar</p>
+                            <i class="far fa-trash-alt"></i>
+                        </button> 
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>
     
-
 @endsection
