@@ -9,7 +9,7 @@ class ControladorTareas extends Controller
 {
     public function mostrar() {
         // CÓDIGO MOSTRAR TAREAS
-        return view('contenido');
+        return view('contenido')->with('tareas', Tarea::all());
     }
 
     public function insertar(Request $request) {
@@ -17,7 +17,7 @@ class ControladorTareas extends Controller
         $tarea = new Tarea;
         $tarea->fill(['nombre' => $request->get('nombre')]);
         
-        return redirect('contenido');
+        return redirect('/');
     }
 
     public function eliminar($id) {
@@ -26,6 +26,6 @@ class ControladorTareas extends Controller
         $tarea = Tarea::find($id);
         $tarea->delete();
 
-        return redirect('contenido');
+        return redirect('/');
     }
 }
