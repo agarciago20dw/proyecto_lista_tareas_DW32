@@ -15,15 +15,15 @@ class TareaSeeder extends Seeder
     public function run()
     {
         $tarea = new Tarea;
-        $tarea->nombre = "nombre1";
+        $tarea->nombre = "Estudiar Laravel";
         $tarea->save();
 
         $tarea2 = new Tarea;
-        $tarea2->nombre = "nombre2";
+        $tarea2->nombre = "Documentar tarea Despliegues";
         $tarea2->save();
 
         $tarea3 = new Tarea;
-        $tarea3->nombre = "nombre3";
+        $tarea3->nombre = "Practicar Ajax";
         $tarea3->save();
     }
 }
