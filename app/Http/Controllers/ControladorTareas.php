@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tarea;
+use Facade\FlareClient\View;
 
 class ControladorTareas extends Controller
 {
     public function mostrar() {
         // CÓDIGO MOSTRAR TAREAS
-        return view('contenido')->with('tareas', Tarea::all());
+        return view('lista')->with('tareas', Tarea::all());
     }
 
     public function insertar(Request $request) {
@@ -28,5 +29,15 @@ class ControladorTareas extends Controller
         $tarea->delete();
 
         return redirect('/');
+    }
+
+    public function formulario() {
+        // CÓDIGO MOSTRAR FORMULARIO
+        return view('formulario');
+    }
+
+    public function buscar() {
+        // CÓDIGO MOSTRAR FORMULARIO
+        return view('buscar');
     }
 }

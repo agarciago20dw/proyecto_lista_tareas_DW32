@@ -22,3 +22,9 @@ Route::post('/tarea', [ControladorTareas::class, "insertar"])->name("tareas.inse
 
 // RUTA PARA /task/id
 Route::delete('/task/{id}', [ControladorTareas::class, "eliminar"])->name("tareas.eliminar")->where(['id' => '[0-9]+']);
+
+// RUTA PARA /task
+Route::get('/task', [ControladorTareas::class, "formulario"])->name("tareas.formulario");
+
+// RUTA PARA /task
+Route::get('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar");
