@@ -25,5 +25,13 @@ class TareaSeeder extends Seeder
         $tarea3 = new Tarea;
         $tarea3->nombre = "Practicar Ajax";
         $tarea3->save();
+
+        $tarea4 = new Tarea;
+        $tarea4->nombre = "Terminar ejercicio Bootstrap";
+        $tarea4->save();
+
+        $tarea5 = new Tarea;
+        $tarea5->nombre = "Descansar... zzz";
+        $tarea5->save();
     }
 }
