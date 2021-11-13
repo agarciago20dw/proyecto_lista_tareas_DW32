@@ -26,5 +26,8 @@ Route::delete('/task/{id}', [ControladorTareas::class, "eliminar"])->name("tarea
 // RUTA PARA /task
 Route::get('/task', [ControladorTareas::class, "formulario"])->name("tareas.formulario");
 
-// RUTA PARA /task
+// RUTA PARA /buscar
 Route::get('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar");
+
+// RUTA PARA /buscar (post)
+Route::post('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar");

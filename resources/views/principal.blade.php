@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <nav class="navbar navbar-dark bg-primary cabecera">
+        <nav class="navbar navbar-light cabecera">
             <div class="container">
                 <a href="#" class="col-6 navbar-brand">
                     <h1 class="m-0">Gestor de Tareas</h1>
@@ -25,13 +25,13 @@
                 <div class="col-6 collapse navbar-collapse text-center justify-content-center mt-4" id="collapsibleNavbar">
                     <ul class="navbar-nav d-flex gap-3">
                         <li class="nav-item">
-                            <a href="{{ route('tareas.mostrar') }}" class="nav-link">Lista Tareas</a>
+                            <a href="{{ route('tareas.mostrar') }}" class="nav-link links">Lista Tareas</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('tareas.formulario') }}" class="nav-link">Añadir Tarea</a>
+                            <a href="{{ route('tareas.formulario') }}" class="nav-link links">Añadir Tarea</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('tareas.buscar') }}" class="nav-link">Buscar Tarea</a>
+                            <a href="{{ route('tareas.buscar') }}" class="nav-link links">Buscar Tarea</a>
                         </li>
                     </ul>
                 </div>

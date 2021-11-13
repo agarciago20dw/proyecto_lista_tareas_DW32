@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tarea;
 use Facade\FlareClient\View;
+use Illuminate\Support\Facades\DB;
 
 class ControladorTareas extends Controller
 {
@@ -36,8 +37,16 @@ class ControladorTareas extends Controller
         return view('formulario');
     }
 
-    public function buscar() {
+    public function buscar(Request $request) {
         // CÓDIGO MOSTRAR FORMULARIO
-        return view('buscar');
+        $tareas_encontradas = null;
+        if ($request->get('texto') != null) {
+            $tareas_encontradas = DB::table('tareas')
+                  ->where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')
+                  ->get();
+        }
+        
+       
+        return view('buscar')->with('tareas_encontradas', $tareas_encontradas);
     }
 }
