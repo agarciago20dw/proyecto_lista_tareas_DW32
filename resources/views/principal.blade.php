@@ -16,8 +16,8 @@
     <div class="contenedor">
         <nav class="navbar navbar-light cabecera">
             <div class="container">
-                <a href="#" class="col-6 navbar-brand">
-                    <h1 class="m-0">Gestor de Tareas</h1>
+                <a href="{{ route('tareas.mostrar') }}" class="col-6 navbar-brand">
+                    <h1 class="m-0">GESTOR DE TAREAS</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>

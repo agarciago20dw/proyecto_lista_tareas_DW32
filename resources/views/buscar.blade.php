@@ -12,28 +12,34 @@
             </button>    
         </form>
 
-        
-        @if ($tareas_encontradas != null)
-            <h5 class="m-0">Tareas Encontradas</h5>
+            <h5 class="m-0 titulo_encontrados">Tareas Encontradas</h5>
             <table>
-                @foreach ($tareas_encontradas as $tarea)
-                    <tr>
-                        <td>
-                            {{ $tarea->nombre }}
+                @if ($tareas_encontradas != null)
+                    @if (count($tareas_encontradas) != 0)
+                        @foreach ($tareas_encontradas as $tarea)
+                            <tr>
+                                <td>
+                                    {{ $tarea->nombre }}
 
-                            <form action="{{ route('tareas.eliminar', [$tarea->id]) }}" method="POST">
-                                @csrf
-                                @method('delete')
+                                    <form action="{{ route('tareas.eliminar', [$tarea->id]) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
 
-                                <button class="boton_eliminar">
-                                    <p class="m-0">Eliminar</p>
-                                    <i class="far fa-trash-alt"></i>
-                                </button> 
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
+                                        <button class="boton_eliminar">
+                                            <p class="m-0">Eliminar</p>
+                                            <i class="far fa-trash-alt"></i>
+                                        </button> 
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                        <tr><td class="mensaje">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} COINCIDENCIAS!</td></tr>
+                    @else
+                        <tr><td class="mensaje">¡LO SIENTO, NO SE ENCONTRARON COINCIDENCIAS!</td></tr>
+                    @endif
+                @else
+                    <tr><td class="mensaje">¡DEBES RELLENAR EL CAMPO PARA BUSCAR UNA TAREA!</td></tr>
+                @endif
             </table>
-        @endif
     </article>
 @endsection

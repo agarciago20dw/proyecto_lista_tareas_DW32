@@ -16,11 +16,17 @@ class ControladorTareas extends Controller
 
     public function insertar(Request $request) {
         // CÓDIGO INSERTAR TAREAS
-        $tarea = new Tarea;
-        $tarea->nombre = $request->get('nombre');
-        $tarea->save();
+        if ($request->get('nombre') != "") {
+            $tarea = new Tarea;
+            $tarea->nombre = $request->get('nombre');
+            $tarea->save();
+            
+            return redirect('/');
+        }
+        else {
+            return view('formulario')->with('error', '¡DEBES RELLENAR EL CAMPO PARA AÑADIR UNA TAREA!');
+        }
         
-        return redirect('/');
     }
 
     public function eliminar($id) {
@@ -40,13 +46,12 @@ class ControladorTareas extends Controller
     public function buscar(Request $request) {
         // CÓDIGO MOSTRAR FORMULARIO
         $tareas_encontradas = null;
-        if ($request->get('texto') != null) {
+        if ($request->get('texto') != "") {
             $tareas_encontradas = DB::table('tareas')
                   ->where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')
                   ->get();
         }
         
-       
         return view('buscar')->with('tareas_encontradas', $tareas_encontradas);
     }
 }

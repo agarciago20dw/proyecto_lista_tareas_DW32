@@ -11,5 +11,8 @@
                 <p class="m-0">Añadir Tarea</p>
             </button>      
         </form>
+        @if (isset($error))
+            <p class="m-0 error">{{ $error }}</p>
+        @endif
     </article>
 @endsection
