@@ -43,15 +43,20 @@ class ControladorTareas extends Controller
         return view('formulario');
     }
 
-    public function buscar(Request $request) {
+    public function buscar() {
         // CÓDIGO MOSTRAR FORMULARIO
-        $tareas_encontradas = null;
+        return view('buscar')  ;
+    }
+
+    public function buscar_texto (Request $request) {
+        // CÓDIGO BUSCAR TEXTO
+        $tareas_encontradas = [];
         if ($request->get('texto') != "") {
             $tareas_encontradas = DB::table('tareas')
-                  ->where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')
-                  ->get();
+                            ->where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')
+                            ->get();
         }
         
-        return view('buscar')->with('tareas_encontradas', $tareas_encontradas);
+        return view('buscar')->with('tareas_encontradas', $tareas_encontradas);   
     }
 }

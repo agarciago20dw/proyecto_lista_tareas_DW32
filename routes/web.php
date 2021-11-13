@@ -30,4 +30,4 @@ Route::get('/task', [ControladorTareas::class, "formulario"])->name("tareas.form
 Route::get('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar");
 
 // RUTA PARA /buscar (post)
-Route::post('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar");
+Route::post('/buscar', [ControladorTareas::class, "buscar_texto"])->name("tareas.buscar_texto");
