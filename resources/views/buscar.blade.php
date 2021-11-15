@@ -15,15 +15,7 @@
             <h5 class="m-0 titulo_encontrados">Tareas Encontradas</h5>
             <table>
                 @if (count($tareas_encontradas) > 0)
-                    @foreach ($tareas_encontradas as $tarea)
-                        <tr>
-                            <td>
-                                {{ $tarea->nombre }}
-
-                                @include('boton_eliminar', ['tarea' => $tarea])
-                            </td>
-                        </tr>
-                    @endforeach
+                    @each('boton_eliminar', $tareas_encontradas, 'tarea')
                     <tr><td class="mensaje">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} COINCIDENCIAS!</td></tr>
                 @else
                     <tr><td class="mensaje">¡LO SIENTO, NO SE ENCONTRARON COINCIDENCIAS!</td></tr>
