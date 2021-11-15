@@ -19,8 +19,8 @@
                         </div>
                         <div class="modal-body">"{{ $tarea->nombre }}"</div>
                         <div class="modal-footer d-flex justify-content-center">
-                            <button type="submit" class="btn btn-danger boton_modal1" data-bs-dismiss="modal">SÍ</button>
-                            <button type="button" class="btn btn-danger boton_modal2" data-bs-dismiss="modal">NO</button>
+                            <button type="submit" class="btn btn-danger boton_modal" data-bs-dismiss="modal">SÍ</button>
+                            <button type="button" class="btn btn-danger boton_modal" data-bs-dismiss="modal">NO</button>
                         </div>
                     </div>
                 </div>
