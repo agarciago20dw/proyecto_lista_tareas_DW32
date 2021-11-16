@@ -11,6 +11,7 @@
                 <p class="m-0">Añadir Tarea</p>
             </button>      
         </form>
+        <!-- SI LA VARIABLE '$error' ESTÁ DEFINIDA MOSTRAMOS SU CONTENIDO -->
         @if (isset($error))
             <p class="m-0 error">{{ $error }}</p>
         @endif
