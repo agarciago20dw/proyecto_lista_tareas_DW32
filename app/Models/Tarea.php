@@ -11,4 +11,8 @@ class Tarea extends Model
     protected $fillable = [
         'nombre'
     ];
+
+    public function usuario() {
+        return $this->belongsTo('App\Models\Usuario');
+    }
 }
