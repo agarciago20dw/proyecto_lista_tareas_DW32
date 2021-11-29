@@ -1,6 +1,11 @@
 <tr>
     <td>
         {{ $tarea->nombre }}
+    </td>
+    <td>
+        {{ $tarea->usuario->nombre }} 
+    </td>
+    <td>
         <form action="{{ route('tareas.eliminar', [$tarea->id]) }}" method="POST">
             @csrf
             @method('delete')

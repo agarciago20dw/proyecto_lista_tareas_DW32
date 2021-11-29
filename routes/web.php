@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorTareas;
+use App\Http\Controllers\ControladorUsuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::get('/', [ControladorTareas::class, "mostrar"])->name("tareas.mostrar");
 Route::post('/tarea', [ControladorTareas::class, "insertar"])->name("tareas.insertar");
 
 // RUTA PARA /task/id
-Route::delete('/task/{id}', [ControladorTareas::class, "eliminar"])->name("tareas.eliminar")->where(['id' => '[0-9]+']);
+Route::delete('/task/{id}', [ControladorTareas::class, "eliminar"])->name("tareas.eliminar");
 
 // RUTA PARA /task
 Route::get('/task', [ControladorTareas::class, "formulario"])->name("tareas.formulario");
@@ -31,3 +32,9 @@ Route::get('/buscar', [ControladorTareas::class, "buscar"])->name("tareas.buscar
 
 // RUTA PARA /buscar (post)
 Route::post('/buscar', [ControladorTareas::class, "buscar_texto"])->name("tareas.buscar_texto");
+
+// RUTA PARA /usuario
+Route::get('/usuario', [ControladorUsuario::class, "formulario"])->name("usuarios.formulario");
+
+// RUTA PARA /usuarios (post)
+Route::post('/usuario', [ControladorUsuario::class, "insertar"])->name("usuarios.insertar");

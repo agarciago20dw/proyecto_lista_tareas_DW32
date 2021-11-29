@@ -31,6 +31,9 @@
                             <a href="{{ route('tareas.formulario') }}" class="nav-link links">Añadir Tarea</a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('usuarios.formulario') }}" class="nav-link links">Añadir Usuario</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('tareas.buscar') }}" class="nav-link links">Buscar Tarea</a>
                         </li>
                     </ul>
@@ -40,6 +43,7 @@
         @yield('articulo1')
         @yield('articulo2')
         @yield('articulo3')
+        @yield('articulo4')
         <footer class="pie">
             <p class="m-0">Adrián García González © DW32 Zubiri Manteo</p>
         </footer>

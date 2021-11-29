@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tarea;
+use App\Models\Usuario;
 use Illuminate\Support\Facades\DB;
 
 class ControladorTareas extends Controller
@@ -18,6 +19,7 @@ class ControladorTareas extends Controller
         if ($request->get('nombre') != "") {
             $tarea = new Tarea;
             $tarea->nombre = $request->get('nombre');
+            $tarea->usuario_id = $request->get('usuario');
             $tarea->save();
             
             return redirect('/');
@@ -38,8 +40,9 @@ class ControladorTareas extends Controller
     }
 
     public function formulario() {
+        $usuarios = Usuario::all();
         // RETORNAMOS LA VISTA 'formulario' PARA AÑADIR UNA NUEVA TAREA
-        return view('formulario');
+        return view('formulario')->with('usuarios', $usuarios);
     }
 
     public function buscar() {
