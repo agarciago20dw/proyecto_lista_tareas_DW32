@@ -54,7 +54,7 @@ body {
     color: rgba(255, 255, 255, 1)!important;
 }
 
-.articulo1 {
+.articulo {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ body {
     padding: 20px;
 }
 
-.articulo1 h5 {
+.articulo h5 {
     width: 70%;
     margin: 20px 15%!important;
     padding-bottom: 15px;
@@ -72,30 +72,40 @@ body {
     border-bottom: 1px solid black;
 }
 
-.articulo1 table {
+.articulo table {
     width: 70%;
     margin: 0 auto;
     min-height: 50px;
 }
 
-.articulo1 table tr {
+.articulo table tr {
     height: 20px;
 }
 
-.articulo1 table tr td {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.articulo table tr td {
     color: #007849;
     font-style: italic;
-    text-align: left;
+    text-align: center ;
     padding: 5px 0;
 }
 
-.articulo1 table tr td i {
+.articulo table tr td i {
     font-size: 1rem;
     margin-left: 5px;
+}
+
+.titulos_tabla {
+    color: white!important;
+}
+
+.izquierda {
+    text-align: left!important;
+}
+
+.derecha {
+    display: flex!important;
+    justify-content: flex-end!important;
+    align-items: center!important;
 }
 
 .formulario {
@@ -148,47 +158,6 @@ body {
     margin-right: 5px;
 }
 
-.articulo2 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-}
-
-.articulo2 h5 {
-    margin: 20px 15%!important;
-    color: white;
-    align-self: flex-start;
-}
-
-.articulo2 table {
-    width: 70%;
-    margin: 0 auto;
-    min-height: 50px;
-}
-
-.articulo2 table tr {
-    height: 20px;
-}
-
-.articulo2 table tr td {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #007849;
-    font-style: italic;
-    text-align: left;
-    padding: 5px 0;
-}
-
-.articulo2 table tr td i {
-    font-size: 1rem;
-    margin-left: 5px;
-}
-
 .boton_eliminar {
     display: flex;
     align-items: center;
@@ -224,51 +193,10 @@ body {
     text-align: center;
 }
 
-.articulo3 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-}
-
-.articulo3 h5 {
-    margin: 20px 15%!important;
-    color: white;
-    align-self: flex-start;
-}
-
 .titulo_encontrados {
     width: 70%;
     padding-bottom: 15px;
     border-bottom: 1px solid black;
-}
-
-.articulo3 table {
-    width: 70%;
-    margin: 0 auto;
-    min-height: 50px;
-}
-
-.articulo3 table tr {
-    height: 20px;
-}
-
-.articulo3 table tr td {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #007849;
-    font-style: italic;
-    text-align: left;
-    padding: 5px 0;
-}
-
-.articulo3 table tr td i {
-    font-size: 1rem;
-    margin-left: 5px;
 }
 
 .mensaje {
@@ -357,19 +285,4 @@ body {
     border-left: 1px solid black;
     border-right: 1px solid black;
     margin-top: 20px;
-}
-
-.articulo4 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-}
-
-.articulo4 h5 {
-    margin: 20px 15%!important;
-    color: white;
-    align-self: flex-start;
 }

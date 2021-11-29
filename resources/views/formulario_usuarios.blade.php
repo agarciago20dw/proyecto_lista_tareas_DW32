@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('articulo4')
-    <article class="articulo4">
+    <article class="articulo">
         <h5 class="m-0">Nuevo Usuario</h5>
         <form class="formulario" method="POST" action="{{ route('usuarios.insertar') }}">
             @csrf 

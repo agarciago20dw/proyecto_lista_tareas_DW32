@@ -54,9 +54,7 @@ class ControladorTareas extends Controller
         // SI EL CAMPO 'texto' DEL FORMULARIO DE BUSCAR TAREA NO ESTÁ VACÍO HACEMOS UNA CONSULTA A LA BD CON LA FACHADA 'DB'; RETORNAMOS LA VISTA 'buscar' (EN LA QUE YA ESTAMOS) CON EL PARÁMETRO 'tareas_encontradas' QUE ES UN ARRAY CON LAS TAREAS ENCONTRADAS
         $tareas_encontradas = [];
         if ($request->get('texto') != "") {
-            $tareas_encontradas = DB::table('tareas')
-                            ->where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')
-                            ->get();
+            $tareas_encontradas = Tarea::where('tareas.nombre', 'LIKE', '%' . $request->get('texto') . '%')->get();
         }
         
         return view('buscar')->with('tareas_encontradas', $tareas_encontradas);   
