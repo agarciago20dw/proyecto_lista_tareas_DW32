@@ -6,11 +6,18 @@
         <form class="formulario" method="POST" action="{{ route('tareas.insertar') }}">
             @csrf 
             <input type="text" name="nombre" class="campo" placeholder="Introduce el nombre de la tarea...">
-            <select name="usuario" id="usuario">
-                @foreach($usuarios as $usuario)
-                    <option value="{{ $usuario->id }}">{{ $usuario->nombre }}</option>
-                @endforeach
-            </select>
+            
+            <div class="usuario_elegir">
+                <select name="usuario">
+                    <option disabled selected>Selecciona un usuario...</option>
+                    @foreach($usuarios as $usuario)
+                        <option value="{{ $usuario->id }}">{{ $usuario->nombre }}</option>
+                    @endforeach
+                </select>
+                <p>-</p>
+                <a href="{{ route('usuarios.formulario') }}">Crea un usuario</a>
+            </div>
+            
             <button class="boton_insertar" type="submit">
                 <i class="far fa-plus-square"></i>
                 <p class="m-0">Añadir Tarea</p>
