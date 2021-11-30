@@ -134,7 +134,7 @@ body {
     border-radius: 5px;
     background: none;
     border: 0;
-    color: black;
+    color: #262228;
     font: inherit;
     line-height: normal;
     overflow: visible;
@@ -275,7 +275,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 25px 20px 25px;
+    padding: 0 0 10px 0;
 }
 
 .usuario_elegir select {
