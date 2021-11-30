@@ -3,7 +3,7 @@
         {{ $tarea->nombre }}
     </td>
     <td>
-        {{ $tarea->usuario->nombre }}
+        {{ $tarea->usuario->nombre }} {{ $tarea->usuario->apellido }}
     </td>
     <td class="derecha">
         <form action="{{ route('tareas.eliminar', [$tarea->id]) }}" method="POST">

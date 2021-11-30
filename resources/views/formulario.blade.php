@@ -11,7 +11,7 @@
                 <select name="usuario">
                     <option disabled selected>Selecciona un usuario...</option>
                     @foreach($usuarios as $usuario)
-                        <option value="{{ $usuario->id }}">{{ $usuario->nombre }}</option>
+                        <option value="{{ $usuario->id }}">{{ $usuario->nombre }} {{ $usuario->apellido }}</option>
                     @endforeach
                 </select>
                 <p>-</p>
