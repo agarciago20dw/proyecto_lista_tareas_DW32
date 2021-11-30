@@ -8,7 +8,7 @@
             <input type="text" name="nombre" class="campo" placeholder="Introduce el nombre del usuario...">
             <input type="text" name="apellido" class="campo" placeholder="Introduce el apellido del usuario...">
             <button class="boton_insertar" type="submit">
-                <i class="far fa-plus-square"></i>
+                <i class="far fa-plus"></i>
                 <p class="m-0">Añadir Usuario</p>
             </button>
         </form>

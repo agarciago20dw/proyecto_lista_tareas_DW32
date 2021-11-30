@@ -6,8 +6,8 @@
         <form class="formulario" method="POST" action="{{ route('tareas.buscar_texto') }}">
             @csrf 
             <input type="text" name="texto" class="campo" placeholder="Introduce el nombre de la tarea...">
-            <button class="boton_insertar" type="submit">
-                <i class="far fa-plus-square"></i>
+            <button class="boton_buscar" type="submit">
+                <i class="fas fa-search"></i>
                 <p class="m-0">Buscar Tarea</p>
             </button>    
         </form>
@@ -24,7 +24,7 @@
                     </tr>
                     <!-- RECORREMOS EL ARRAY '$tareas' LLAMÁNDO A LA VISTA PARCIAL 'boton_eliminar' -->
                     @each('boton_eliminar', $tareas_encontradas, 'tarea')
-                    <tr><td colspan="3" class="mensaje">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} COINCIDENCIAS!</td></tr>
+                    <tr><td colspan="3" class="mensaje" style="padding-top: 25px;">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} COINCIDENCIAS!</td></tr>
                 <!-- SI NO, SIGNIFICA QUE NO SE ENCONTRARON COINCIDENCIAS -->
                 @else
                     <tr><td colspan="3" class="mensaje">¡LO SIENTO, NO SE ENCONTRARON COINCIDENCIAS!</td></tr>

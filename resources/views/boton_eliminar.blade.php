@@ -22,7 +22,7 @@
                             <h4 class="modal-title titulo_eliminar">¿Seguro que quieres borrar esta tarea?</h4>
                             <button type="button" class="btn-close close" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body text-center">"{{ $tarea->nombre }}" - {{ $tarea->usuario->nombre }}</div>
+                        <div class="modal-body text-center">"{{ $tarea->nombre }}" - {{ $tarea->usuario->nombre }} {{ $tarea->usuario->apellido }}</div>
                         <div class="modal-footer d-flex justify-content-center">
                             <button type="submit" class="btn btn-danger boton_modal" data-bs-dismiss="modal">SÍ</button>
                             <button type="button" class="btn btn-danger boton_modal" data-bs-dismiss="modal">NO</button>

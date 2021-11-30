@@ -148,20 +148,54 @@ body {
     font-size: .9rem;
 }
 
+.boton_buscar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .6rem;
+    border-radius: 5px;
+    background: none;
+    border: 0;
+    color: #262228;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    -webkit-appearance: button;
+    -moz: none;
+    -ms: none;
+    background-color: #007849;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: .9rem;
+}
+
 .boton_insertar:hover {
+    transition: .1s;
+    transform: scale(.95);
+}
+
+.boton_buscar:hover {
     transition: .1s;
     transform: scale(.95);
 }
 
 .boton_insertar i {
     font-size: 1rem;
+    font-weight: bold;
     margin-right: 5px;
+}
+
+.boton_buscar i {
+    font-size: .8rem;
+    margin-right: 5px;
+    line-height: 0;
 }
 
 .boton_eliminar {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
     padding: .6rem;
     border-radius: 5px;
     background: none;
