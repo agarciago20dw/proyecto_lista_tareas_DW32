@@ -38,3 +38,9 @@ Route::get('/usuario', [ControladorUsuario::class, "formulario"])->name("usuario
 
 // RUTA PARA /usuarios (post)
 Route::post('/usuario', [ControladorUsuario::class, "insertar"])->name("usuarios.insertar");
+
+// RUTA PARA /buscar
+Route::get('/buscar_avanzada', [ControladorTareas::class, "buscar_avanzada"])->name("tareas.buscar_avanzada");
+
+// RUTA PARA /buscar (post)
+Route::post('/buscar', [ControladorTareas::class, "buscar_avanzada_fecha"])->name("tareas.buscar_avanzada_fecha");

@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a href="{{ route('tareas.buscar') }}" class="nav-link links">Buscar Tarea</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('tareas.buscar_avanzada') }}" class="nav-link links">Buscar Tarea - AVANZADA</a>
+                        </li>
                     </ul>
                 </div>
             </div>

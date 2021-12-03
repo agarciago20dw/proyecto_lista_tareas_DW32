@@ -47,7 +47,7 @@ class ControladorTareas extends Controller
 
     public function buscar() {
         // RETORNAMOS LA VISTA 'buscar' PARA BUSCAR UNA TAREA
-        return view('buscar')  ;
+        return view('buscar');
     }
 
     public function buscar_texto (Request $request) {
@@ -58,5 +58,20 @@ class ControladorTareas extends Controller
         }
         
         return view('buscar')->with('tareas_encontradas', $tareas_encontradas);   
+    }
+
+    public function buscar_avanzada() {
+        // RETORNAMOS LA VISTA 'buscar' PARA BUSCAR UNA TAREA - AVANZADA
+        return view('buscar_avanzada');
+    }
+
+    public function buscar_avanzada_fecha (Request $request) {
+        // SI EL CAMPO 'fecha' DEL FORMULARIO DE BUSCAR TAREA NO ESTÁ VACÍO HACEMOS UNA CONSULTA A LA BD CON LA FACHADA 'DB'; RETORNAMOS LA VISTA 'buscar' (EN LA QUE YA ESTAMOS) CON EL PARÁMETRO 'tareas_encontradas' QUE ES UN ARRAY CON LAS TAREAS ENCONTRADAS
+        $tareas_encontradas = [];
+        if ($request->get('fecha') != "") {
+            $tareas_encontradas = Tarea::where('tareas.created_at', 'LIKE', '%' . $request->get('fecha') . '%')->get();
+        }
+        
+        return view('buscar_avanzada')->with('tareas_encontradas', $tareas_encontradas);
     }
 }
