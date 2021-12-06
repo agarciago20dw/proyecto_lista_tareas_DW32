@@ -43,4 +43,7 @@ Route::post('/usuario', [ControladorUsuario::class, "insertar"])->name("usuarios
 Route::get('/buscar_avanzada', [ControladorTareas::class, "buscar_avanzada"])->name("tareas.buscar_avanzada");
 
 // RUTA PARA /buscar (post)
-Route::post('/buscar', [ControladorTareas::class, "buscar_avanzada_fecha"])->name("tareas.buscar_avanzada_fecha");
+Route::post('/buscar/avanzada/fecha', [ControladorTareas::class, "buscar_avanzada_fecha"])->name("tareas.buscar_avanzada_fecha");
+
+// RUTA PARA /buscar (post)
+Route::post('/buscar/avanzada/usuario', [ControladorTareas::class, "buscar_avanzada_usuario"])->name("tareas.buscar_avanzada_usuario");

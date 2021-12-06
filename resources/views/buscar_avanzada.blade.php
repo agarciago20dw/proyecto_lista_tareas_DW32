@@ -11,9 +11,17 @@
                 <p class="m-0">Buscar Tarea</p>
             </button>    
         </form>
+        <h5 class="m-0">Buscador Tareas (por nombre de usuario)</h5>
         <form class="formulario" method="POST" action="{{ route('tareas.buscar_avanzada_usuario') }}">
             @csrf 
-            <input type="date" name="fecha" class="campo" placeholder="">
+            <div class="usuario_elegir usuario_elegir_avanzada">
+                <select name="usuario">
+                    <option disabled selected>Selecciona un usuario...</option>
+                    @foreach($usuarios as $usuario)
+                        <option value="{{ $usuario->id }}">{{ $usuario->nombre }} {{ $usuario->apellido }}</option>
+                    @endforeach
+                </select>
+            </div>
             <button class="boton_buscar" type="submit">
                 <i class="fas fa-search"></i>
                 <p class="m-0">Buscar Tarea</p>
@@ -32,10 +40,10 @@
                     </tr>
                     <!-- RECORREMOS EL ARRAY '$tareas' LLAMÁNDO A LA VISTA PARCIAL 'boton_eliminar' -->
                     @each('boton_eliminar', $tareas_encontradas, 'tarea')
-                    <tr><td colspan="3" class="mensaje" style="padding-top: 25px;">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} COINCIDENCIAS!</td></tr>
+                    <tr><td colspan="3" class="mensaje" style="padding-top: 25px;">¡BIEN, SE ENCONTRARON {{ count($tareas_encontradas) }} RESULTADOS!</td></tr>
                 <!-- SI NO, SIGNIFICA QUE NO SE ENCONTRARON COINCIDENCIAS -->
                 @else
-                    <tr><td colspan="3" class="mensaje">¡LO SIENTO, NO SE ENCONTRARON COINCIDENCIAS!</td></tr>
+                    <tr><td colspan="3" class="mensaje">¡LO SIENTO, NO SE ENCONTRARON RESULTADOS!</td></tr>
                 @endif
                 
             </table>

@@ -23,7 +23,7 @@ class ControladorUsuario extends Controller
             return redirect('/task');
         }
         else {
-            return view('formulario_usuarios')->with('error', '¡DEBES RELLENAR LOS CAMPO PARA AÑADIR UN USUARIO!');
+            return view('formulario_usuarios')->with('error', '¡DEBES RELLENAR LOS CAMPOS PARA AÑADIR UN USUARIO!');
         }
         
     }
