@@ -16,18 +16,19 @@ class ControladorTareas extends Controller
 
     public function insertar(Request $request) {
         // SI EL CAMPO 'nombre' DEL FORMULARIO NO ESTÁ VACÍO CREAMOS UNA NUEVA TAREA Y LA INSERTAMOS EN LA BD Y REDIRECCIONAMOS A LA RAÍZ DEL PROYECTO, SI NO DEVOLVEMOS LA VISTA EN LA QUE ESTAMOS ('formulario') CON UN MENSAJE DE ERROR
-        if ($request->get('nombre') != "") {
-            $tarea = new Tarea;
-            $tarea->nombre = $request->get('nombre');
-            $tarea->usuario_id = $request->get('usuario');
-            $tarea->save();
-            
-            return redirect('/');
-        }
-        else {
-            return view('formulario')->with('error', '¡DEBES RELLENAR EL CAMPO PARA AÑADIR UNA TAREA!');
-        }
+        $validatedData = $request->validate([
+            'nombre' => ['required', 'unique:tareas', 'max:255'],
+            'usuario' => ['required'],
+        ]);
+
+        $tarea = new Tarea;
+        $tarea->nombre = $request->get('nombre');
+        $tarea->usuario_id = $request->get('usuario');
+        $tarea->save();
         
+        return redirect('/');
+
+        return view('formulario')->with('error', '¡DEBES RELLENAR EL CAMPO PARA AÑADIR UNA TAREA!');
     }
 
     public function eliminar($id) {
