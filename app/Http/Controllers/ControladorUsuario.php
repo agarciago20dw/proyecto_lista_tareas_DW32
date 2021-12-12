@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnadirTarea;
 use App\Models\Usuario;
-use Illuminate\Http\Request;
 
 class ControladorUsuario extends Controller
 {
@@ -12,19 +12,14 @@ class ControladorUsuario extends Controller
         return view('formulario_usuarios');
     }
 
-    public function insertar(Request $request) {
+    public function insertar(AnadirTarea $request) {
+        $validado = $request->validated();
         // SI EL CAMPO 'nombre' DEL FORMULARIO NO ESTÁ VACÍO CREAMOS UNA NUEVA TAREA Y LA INSERTAMOS EN LA BD Y REDIRECCIONAMOS A LA RAÍZ DEL PROYECTO, SI NO DEVOLVEMOS LA VISTA EN LA QUE ESTAMOS ('formulario') CON UN MENSAJE DE ERROR
-        if (($request->get('nombre') != "") && ($request->get('apellido') != "")) {
-            $usuario = new Usuario;
-            $usuario->nombre = $request->get('nombre');
-            $usuario->apellido = $request->get('apellido');
-            $usuario->save();
-            
-            return redirect('/task');
-        }
-        else {
-            return view('formulario_usuarios')->with('error', '¡DEBES RELLENAR LOS CAMPOS PARA AÑADIR UN USUARIO!');
-        }
+        $usuario = new Usuario;
+        $usuario->nombre = $validado['nombre'];
+        $usuario->apellido = $validado['apellido'];
+        $usuario->save();
         
+        return redirect('/task');   
     }
 }
