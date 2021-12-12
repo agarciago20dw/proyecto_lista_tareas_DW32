@@ -23,6 +23,7 @@ class AnadirTarea extends FormRequest
      */
     public function rules()
     {
+        // DEFINIMOS LAS REGLAS DE VALIDACIÓN (EN ESTE CASO, SON OBLIGATORIOS Y TIENEN UN MÁX DE 255 CARACTERES)
         return [
             'nombre' => 'required|max:255',
             'apellido' => 'required|max:255',
@@ -30,6 +31,7 @@ class AnadirTarea extends FormRequest
     }
 
     public function messages() {
+        // PERSONALIZAMOS LOS MENSAJES DE ERROR EN CASO DE QUE ALGUNO DE LOS DOS CAMPOS NO PASE LA VALIDACIÓN
         return [
             'nombre.required' => '¡Debes rellenar el campo nombre para poder crear un usuario!',
             'nombre.max' => '¡El campo nombre no puede tener más de 255 caracteres!',

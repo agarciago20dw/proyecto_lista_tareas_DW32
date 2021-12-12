@@ -23,14 +23,10 @@
                 <p class="m-0">Añadir Tarea</p>
             </button>      
         </form>
-        <!-- SI LA VARIABLE '$error' ESTÁ DEFINIDA MOSTRAMOS SU CONTENIDO -->
-        {{-- @if (isset($error))
-            <p class="m-0 error">{{ $error }}</p>
-        @endif --}}
-
+        <!-- SI HAY ALGÚN ERROR LO MOSTRAMOS -->
         @if ($errors->any())
             @foreach ($errors->all() as $error)
-                <p class="m-0 error">{{ $error }}</p>
+                <p class="m-0 error">{{ strtoupper($error) }}</p>
             @endforeach
         @endif
 
