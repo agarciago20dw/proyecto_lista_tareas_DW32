@@ -16,10 +16,17 @@ class ControladorTareas extends Controller
 
     public function insertar(Request $request) {
         // SI EL CAMPO 'nombre' DEL FORMULARIO NO ESTÁ VACÍO CREAMOS UNA NUEVA TAREA Y LA INSERTAMOS EN LA BD Y REDIRECCIONAMOS A LA RAÍZ DEL PROYECTO, SI NO DEVOLVEMOS LA VISTA EN LA QUE ESTAMOS ('formulario') CON UN MENSAJE DE ERROR
-        $validatedData = $request->validate([
-            'nombre' => ['required', 'unique:tareas', 'max:255'],
-            'usuario' => ['required'],
-        ]);
+        $validatedData = $request->validate(
+            [
+                'nombre' => ['required', 'max:255'],
+                'usuario' => ['required'],
+            ],
+            $customMessages = [
+                'nombre.required' => '¡Debes rellenar el campo nombre para poder crear una tarea!',
+                'nombre.max' => '¡El campo nombre no puede tener más de 255 caracteres!',
+                'usuario.required' => '¡Debes seleccionar un usuario para poder crear una tarea!',
+            ]
+        );
 
         $tarea = new Tarea;
         $tarea->nombre = $request->get('nombre');
