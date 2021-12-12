@@ -13,11 +13,10 @@ class ControladorUsuario extends Controller
     }
 
     public function insertar(AnadirTarea $request) {
-        $validado = $request->validated();
         // SI EL CAMPO 'nombre' DEL FORMULARIO NO ESTÁ VACÍO CREAMOS UNA NUEVA TAREA Y LA INSERTAMOS EN LA BD Y REDIRECCIONAMOS A LA RAÍZ DEL PROYECTO, SI NO DEVOLVEMOS LA VISTA EN LA QUE ESTAMOS ('formulario') CON UN MENSAJE DE ERROR
         $usuario = new Usuario;
-        $usuario->nombre = $validado['nombre'];
-        $usuario->apellido = $validado['apellido'];
+        $usuario->nombre = $request->get('nombre');
+        $usuario->apellido = $request->get('apellido');
         $usuario->save();
         
         return redirect('/task');   
