@@ -28,4 +28,13 @@ class AnadirTarea extends FormRequest
             'apellido' => 'required|max:255',
         ];
     }
+
+    public function messages() {
+        return [
+            'nombre.required' => '¡Debes rellenar el campo nombre para poder crear un usuario!',
+            'nombre.max' => '¡El campo nombre no puede tener más de 255 caracteres!',
+            'apellido.required' => '¡Debes rellenar el campo apellido para poder crear un usuario!',
+            'apellido.max' => '¡El campo apellido no puede tener más de 255 caracteres!',
+        ];
+    }
 }
